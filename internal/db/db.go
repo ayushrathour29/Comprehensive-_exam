@@ -44,3 +44,10 @@ func Close() {
 		}
 	}
 }
+
+func GetSQLDB() *sql.DB {
+	if pg, ok := DB.(*PostgresDB); ok {
+		return pg.DB
+	}
+	return nil
+}

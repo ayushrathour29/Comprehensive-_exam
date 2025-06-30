@@ -31,6 +31,10 @@ func main() {
 	if err := db.Connect(); err != nil {
 		logrus.WithError(err).Fatal(utils.LogDBConnectFail)
 	}
+	// Run migrations
+	if err := db.RunMigrations(db.GetSQLDB()); err != nil {
+		logrus.WithError(err).Fatal("Failed to run migrations")
+	}
 	defer db.Close()
 
 	// Initialize Gin router

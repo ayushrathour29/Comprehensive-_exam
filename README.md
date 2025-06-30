@@ -2,6 +2,10 @@
 
 A high-performance asynchronous job queue system built with Go, Gin, PostgreSQL, and Logrus. Supports job submission, retrieval, listing with pagination, and background processing with a worker pool. Designed for easy deployment on Render or Docker.
 
+
+# deployed link: https://comprehensive-exam.onrender.com/jobs
+
+
 ## Features
 - RESTful API (Gin)
 - PostgreSQL persistence
@@ -60,11 +64,6 @@ GET /jobs?limit=10&offset=0
 ]
 ```
 
-### Health Check
-```
-GET /health
-```
-
 ## Environment Variables
 - `DATABASE_URL` (required): PostgreSQL connection string
 - `PORT` (optional): Port to run the server (default: 8080)
@@ -106,22 +105,6 @@ GET /health
 - Set `DATABASE_URL` in Render's environment settings (use Render's managed PostgreSQL or your own).
 - Use the provided `Dockerfile` or let Render auto-detect Go.
 
-## Project Structure
-```
-final_assessment/
-├── cmd/main.go
-├── internal/
-│   ├── handlers/
-│   ├── models/
-│   ├── services/
-│   ├── utils/
-├── go.mod
-├── go.sum
-├── .env
-├── Dockerfile
-├── docker-compose.yml
-└── README.md
-```
 
 ## License
 MIT
